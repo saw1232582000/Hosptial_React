@@ -83,7 +83,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
         return;
       }
       const res = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/api/user`,
+        `https://localhost:7053/api/SignIn/SingUp`,
         {
           username: details.username,
           password: details.password,

@@ -18,7 +18,7 @@ const useAxios = (props) => {
   
     const axiosInstance = axios.create({
       baseURL,
-      headers: { Authorization: `Bearer ${auth?.access_token}` },
+      headers: { Authorization: `Bearer ${auth?.access_token}`, },
       validateStatus: function (status) {
         return status < 500;
       },
@@ -37,7 +37,7 @@ const useAxios = (props) => {
         `${baseURL}/api/Login/refreshToken`,
         {
           access_token:auth.access_token,
-          refresh_token: auth.refresh_token,
+          refresh_token:auth.refresh_token,
         },
         {
           validateStatus: function (status) {
@@ -50,12 +50,12 @@ const useAxios = (props) => {
         
         localStorage.setItem("my-genesis-auth-tokens", JSON.stringify(res.data));
         setAuth(res.data);
-        req.headers.Authorization = `Bearer ${res.data.access_token}`;
-      } else {
-        //console.log("return status:",res.status)
+       // req.headers.Authorization = `Bearer ${JSON.stringify(res.data.access_token)}`;
+       req.headers.Authorization = `Bearer ${res.data.access_token}`;
+      }else {
         setAuth(null);
         localStorage.removeItem("my-genesis-auth-tokens");
-       // alert(`error occur while refreshing token:${res.status},${auth.refresh_token},${auth.access_token}`)
+       
         history.push("/login");
       }
       return req;

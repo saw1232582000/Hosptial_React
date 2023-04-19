@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import { Redirect, Route, Switch, useRouteMatch } from "react-router";
 import Patient from "../../component/patient/Patient";
 import ResponsiveDrawer from "../ResponsiveDrawer";
-import Bill from "../../component/bill/Bill";
+import Bill from "../../component/bill/bill_container/Bill";
 import Appbar from "../Appbar";
 
 
@@ -27,7 +27,7 @@ const Dashboard = () => {
         <Toolbar />
         <Switch>
           <Route path={`${path}/patient`} component={Patient} />
-          <Route path={`${path}/bills`} component={Bill} />
+          {/* <Route path={`${path}/bills`} component={Bill} /> */}
            {/* <Redirect to={`${path}/patient`} />  */}
         </Switch>
         {/* <Footer /> */}

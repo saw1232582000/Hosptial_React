@@ -108,7 +108,10 @@ const PatientTable = () => {
           });
           setRows(data);
           setIsTableLoading(false);
+        }else if(res.statusText==="ERR_NETWORK"){
+          history.push("/login")
         }
+
         return;
         // eslint-disable-next-line
       }, []);

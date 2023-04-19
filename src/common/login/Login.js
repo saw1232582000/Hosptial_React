@@ -93,13 +93,21 @@ const Login = () => {
     // } else {
     //   openAlert({ status: res.status, detail: res.data.detail });
     // }
-    const res= await axios.post(`https://localhost:7053/api/Login/Login`,details);
-    if(res.status==200){
+    const res= await axios.post(`https://localhost:7053/api/Login/Login`,details,
+    {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      validateStatus: function (status) {
+        return status < 500;
+      },
+    });
+    if(res.status===200){
       console.log(res.data)
       setAuth(res.data)
       localStorage.setItem("my-genesis-auth-tokens",JSON.stringify(res.data));
       history.push('/')
-    }else {
+    }else if(res.status!==200){
       openAlert({ status: res.status, detail: res.data.detail });
       setLoading(false);
     }

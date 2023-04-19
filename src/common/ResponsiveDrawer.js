@@ -65,7 +65,7 @@ const ResponsiveDrawer= ({ window, drawerWidth }) =>{
             Menu
           </Typography>
         </ListItem>
-        <ListItemButton
+        {/* <ListItemButton
           selected={
             location.pathname.includes("bills") ||
             location.pathname.includes("deposit") ||
@@ -151,8 +151,8 @@ const ResponsiveDrawer= ({ window, drawerWidth }) =>{
               <ListItemText primary="Sales & Service Item" />
             </ListItemButton>
           </List>
-        </Collapse>
-        <ListItemButton
+        </Collapse> */}
+        {/* <ListItemButton
           selected={
             location.pathname.includes("/pharmacy_item") ||
             location.pathname.includes("/inventory_item") ||
@@ -169,17 +169,7 @@ const ResponsiveDrawer= ({ window, drawerWidth }) =>{
         </ListItemButton>
         <Collapse in={openInventory} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            {/* <ListItemButton
-              size="small"
-              sx={{ pl: "25px" }}
-              selected={location.pathname.includes("/pharmacy_item")}
-              onClick={handleClick(`${url}/pharmacy_item`)}
-            >
-              <ListItemIcon>
-                <EventNoteIcon />
-              </ListItemIcon>
-              <ListItemText primary="Pharmacy Item" />
-            </ListItemButton> */}
+            
             <ListItemButton
               size="small"
               sx={{ pl: "25px" }}
@@ -214,7 +204,7 @@ const ResponsiveDrawer= ({ window, drawerWidth }) =>{
               <ListItemText primary="Transaction Type" />
             </ListItemButton>
           </List>
-        </Collapse>
+        </Collapse> */}
         <ListItemButton
           size="small"
           selected={location.pathname.includes("patient")}
