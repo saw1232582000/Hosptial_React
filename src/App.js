@@ -24,10 +24,15 @@ function App() {
           <CustomSnackbar>
           <Router>
             <Switch>
-            <PrivateRoute path="/dashboard" component={Dashboard} />
+            {/* <PrivateRoute path="/dashboard" component={Dashboard} />
               <Route path="/login" component={Login}/>
               <Route path="/signup" component={Signup} />
-              <Redirect to="/dashboard" />
+              <Redirect to="/dashboard" /> */}
+              {/* <PrivateRoute path="/login" component={Login} /> */}
+              <Route path="/login" component={Login}/>
+              <Route path="/signup" component={Signup} />
+              <Route path="/dashboard" component={Dashboard}/>
+              <Redirect to="/login" />
             </Switch>
           </Router>
           </CustomSnackbar>

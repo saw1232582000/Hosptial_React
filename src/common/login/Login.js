@@ -106,7 +106,7 @@ const Login = () => {
       console.log(res.data)
       setAuth(res.data)
       localStorage.setItem("my-genesis-auth-tokens",JSON.stringify(res.data));
-      history.push('/')
+      history.push('/dashboard')
     }else if(res.status!==200){
       openAlert({ status: res.status, detail: res.data.detail });
       setLoading(false);
